@@ -1,6 +1,4 @@
 from config import *
-import psycopg2
-
 
 def load_sql_file_to_db(sql_file):
     try:
@@ -24,4 +22,4 @@ def load_sql_file_to_db(sql_file):
             connection.close()
 
 
-load_sql_file_to_db(sql_file=INPUT_FILE)
+load_sql_file_to_db(sql_file=input_file)
