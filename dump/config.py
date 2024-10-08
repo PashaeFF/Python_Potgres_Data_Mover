@@ -10,7 +10,7 @@ POSTGRES_PASSWORD_DUMP = os.getenv("POSTGRES_PASSWORD_DUMP")
 POSTGRES_HOST_DUMP = os.getenv("POSTGRES_HOST_DUMP")
 POSTGRES_PORT_DUMP = os.getenv("POSTGRES_PORT_DUMP")
 
-output_file = "backup_postgresql.sql"
+output_file = os.getenv("SQL_OUTPUT")
 
 autoincrement_list = ["id"]
 

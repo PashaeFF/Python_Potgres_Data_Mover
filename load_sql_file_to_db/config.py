@@ -11,7 +11,7 @@ POSTGRES_HOST_LOAD = os.getenv("POSTGRES_HOST_LOAD")
 POSTGRES_PORT_LOAD = os.getenv("POSTGRES_PORT_LOAD")
 
 
-input_file = "backup_postgresql.sql"
+input_file = os.getenv("SQL_INPUT")
 
 connection = psycopg2.connect(
             database=POSTGRES_DB_LOAD,
