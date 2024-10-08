@@ -44,6 +44,8 @@ $ pip install -r requirments.txt
 ```
 
 Create a .env file in the main directory and add the following content to it:
+<b>SQL_OUTPUT</b> - The path where the SQL file will be created.
+<b>SQL_INPUT</b> - The path where the SQL file is selected.
 
 ```
 ###############################################################
@@ -57,7 +59,7 @@ POSTGRES_PASSWORD_DUMP=dump_password
 POSTGRES_HOST_DUMP=dump_host
 POSTGRES_PORT_DUMP=dump_port
 
-SQL_OUTPUT=backup_postgresql.sql
+SQL_OUTPUT=backup_postgresql.sql  # sql output path
 
 ######################################################
 ###                 POSTGRES LOAD                  ###
@@ -70,7 +72,7 @@ POSTGRES_PASSWORD_LOAD=postgres
 POSTGRES_HOST_LOAD=localhost
 POSTGRES_PORT_LOAD=5432
 
-SQL_INPUT=backup_postgresql.sql
+SQL_INPUT=backup_postgresql.sql # 
 ```
 
 ___
