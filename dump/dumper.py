@@ -17,6 +17,7 @@ def dump_postgresql_to_sql(output_file):
                         string_agg(
                             CASE 
                                 WHEN column_name = 'default' THEN '\"' || column_name || '\" ' || data_type
+                                WHEN column_name = 'id' THEN 'id SERIAL PRIMARY KEY'  -- AUTO INCREASING ID
                                 ELSE column_name || ' ' || data_type 
                             END, 
                         ', ' ORDER BY ordinal_position) || 
@@ -56,6 +57,27 @@ def dump_postgresql_to_sql(output_file):
                     values = values.lstrip(", ")
                     insert_query = f"INSERT INTO \"{table_name}\" VALUES ({values});"
                     f.write(insert_query + "\n")
+
+                if autoincrement_list:
+                    for value in autoincrement_list:
+                        try:
+                            # Get the maximum id value for the table (if the column exists)
+                            cursor.execute(f"SELECT MAX({value}) FROM {table_name_for_sql};")
+                            max_id = cursor.fetchone()[0]
+
+                            if max_id is not None:
+                                try:
+                                    # Update the sequence for the SERIAL id to start from max_id + 1
+                                    f.write(f"SELECT setval(pg_get_serial_sequence('{table_name}', '{value}'), {max_id}, true);\n")
+                                except Exception as e:
+                                    print(f"Warning: Failed to update sequence for {table_name}.{value} - {e}")
+                                    connection.rollback()
+                                    continue
+                        except Exception as e:
+                            print(f"Warning: Failed to retrieve max id for {table_name}.{value} - {e}")
+                            connection.rollback()
+                            continue
+                        
         
         print(f"Database dump has been written to {output_file}")
     except Exception as error:
@@ -67,6 +89,6 @@ def dump_postgresql_to_sql(output_file):
 
 
 dump_postgresql_to_sql(
-    output_file=OUTPUT_FILE
+    output_file=output_file
 )
 

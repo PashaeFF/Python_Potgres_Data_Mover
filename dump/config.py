@@ -9,7 +9,10 @@ POSTGRES_USER_DUMP = os.getenv("POSTGRES_USER_DUMP")
 POSTGRES_PASSWORD_DUMP = os.getenv("POSTGRES_PASSWORD_DUMP")
 POSTGRES_HOST_DUMP = os.getenv("POSTGRES_HOST_DUMP")
 POSTGRES_PORT_DUMP = os.getenv("POSTGRES_PORT_DUMP")
-OUTPUT_FILE = "backup_postgresql.sql"
+
+output_file = "backup_postgresql.sql"
+
+autoincrement_list = ["id"]
 
 
 connection = psycopg2.connect(
