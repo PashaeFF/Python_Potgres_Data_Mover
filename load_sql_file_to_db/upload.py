@@ -1,6 +1,6 @@
 from config import *
 
-def load_sql_file_to_db(sql_file):
+def upload_sql_file_to_db(sql_file):
     try:
         # Open and read the sql file
         with open(sql_file, 'r') as file:
@@ -10,7 +10,7 @@ def load_sql_file_to_db(sql_file):
 
         # Update changes
         connection.commit()
-        print(f"Data from the '{sql_file}' file has been successfully loaded.")
+        print(f"Data from the '{sql_file}' file has been successfully uploaded.")
 
     except Exception as e:
         print(f"Error occurred: {e}")
@@ -21,4 +21,4 @@ def load_sql_file_to_db(sql_file):
             connection.close()
 
 
-load_sql_file_to_db(sql_file=input_file)
+upload_sql_file_to_db(sql_file=input_file)

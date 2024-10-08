@@ -1,26 +1,19 @@
-# POSTGRES DUMPER & LOADER
+# POSTGRES DUMPER & UPLOADER (Restore)
 
-- [Postgres Dumper & Loader](#postgres-dumper--loader)
-- [Project Title](#project-title)
+- [Postgres Dumper & Uploader](#postgres-dumper--uploader)
 - [Description](#description)
 - [Installing](#installing)
 - [Run Dump](#run-dump)
-- [Run Load](#run-load)
+- [Run Upload](#run-upload)
 - [Author](#author)
 
 ___
-
-# Project Title
-___
-* <b>Postgres Dumper & Loader</b>
-___
-
 # Description
 ___
 * <b> Dump data from the selected PostgreSQL database </b>
-* <b> SQL file data loading into selected PostgreSQL database </b>
+* <b> SQL file data uploading into selected PostgreSQL database </b>
 
-<b> Note: The dump and load functions operate independently; it is sufficient to specify the database information for the function you are using. </b>
+<b> Note: The dump and upload functions operate independently; it is sufficient to specify the database information for the function you are using. </b>
 ____
 
 # Installing
@@ -59,20 +52,20 @@ POSTGRES_PASSWORD_DUMP=dump_password
 POSTGRES_HOST_DUMP=dump_host
 POSTGRES_PORT_DUMP=dump_port
 
-SQL_OUTPUT=backup_postgresql.sql  # sql output path
+SQL_OUTPUT=backup_postgresql.sql
 
 ######################################################
-###                 POSTGRES LOAD                  ###
+###                POSTGRES UPLOAD                 ###
 ### The database where you want to upload the data ###
 ######################################################
 
-POSTGRES_DB_LOAD=loaded
-POSTGRES_USER_LOAD=postgres
-POSTGRES_PASSWORD_LOAD=postgres
-POSTGRES_HOST_LOAD=localhost
-POSTGRES_PORT_LOAD=5432
+POSTGRES_DB_UPLOAD=loaded
+POSTGRES_USER_UPLOAD=postgres
+POSTGRES_PASSWORD_UPLOAD=postgres
+POSTGRES_HOST_UPLOAD=localhost
+POSTGRES_PORT_UPLOAD=5432
 
-SQL_INPUT=backup_postgresql.sql # 
+SQL_INPUT=backup_postgresql.sql
 ```
 
 ___
@@ -84,9 +77,9 @@ If you have placed the <b>POSTGRES DUMP</b> information inside the <b>.env</b> f
 
 ___
 
-# Run Load
+# Run Upload
 
-If you have placed the <b>POSTGRES LOAD</b> information into the <b>.env</b> file, navigate to the <b>load_sql_file_to_db</b> folder and run the <b>load.py</b> file. The file specified in the <b>SQL_INPUT</b> variable in the <b>.env</b> will be loaded into the selected database."
+If you have placed the <b>POSTGRES UPLOAD</b> information into the <b>.env</b> file, navigate to the <b>upload_sql_file_to_db</b> folder and run the <b>upload.py</b> file. The file specified in the <b>SQL_INPUT</b> variable in the <b>.env</b> will be uploaded into the selected database."
 
 ___
 
