@@ -1,5 +1,4 @@
-from config import *
-
+from ..config import *
 
 def dump_postgresql_to_sql(output_file):
     try:
