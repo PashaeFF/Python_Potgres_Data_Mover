@@ -2,7 +2,6 @@ from config import *
 
 def load_sql_file_to_db(sql_file):
     try:
-
         # Open and read the sql file
         with open(sql_file, 'r') as file:
             sql_commands = file.read()

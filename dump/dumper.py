@@ -9,6 +9,7 @@ def create_table(table_name):
             string_agg(
                 CASE 
                     WHEN column_name = 'default' THEN '\"' || column_name || '\" ' || data_type
+                    WHEN column_name = 'order' THEN '\"' || column_name || '\" ' || data_type
                     WHEN column_name = 'id' THEN 'id SERIAL PRIMARY KEY'  -- AUTO INCREASING ID
                     ELSE column_name || ' ' || data_type 
                 END, 
@@ -62,7 +63,8 @@ def insert_table(table_name_for_sql, table_name, f):
                 elif isinstance(value, float):
                     values += f", {value}"
                 else:
-                    str_value = str(value)
+                    value = str(value)
+                    str_value = str(value.replace("'","\""))
                     values += f", \'{str_value}\'"
             else:
                 values += ", NULL"
@@ -90,7 +92,6 @@ def dump_postgresql_to_sql(output_file):
                 # INSERT table datas
                 cursor.execute(f"SELECT * FROM {table_name_for_sql};")
                 insert_table(table_name_for_sql, table_name, f)
-
         print(f"Database dump has been written to {output_file}")
     except Exception as error:
         print(f"Error occurred: {error}")
