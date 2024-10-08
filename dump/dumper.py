@@ -1,4 +1,4 @@
-from ..config import *
+from config import *
 
 def dump_postgresql_to_sql(output_file):
     try:
@@ -9,6 +9,7 @@ def dump_postgresql_to_sql(output_file):
         with open(output_file, 'w') as f:
             for table in tables:
                 table_name = table[0]
+                print("table > ", table_name)
                 
                 # CREATE TABLE for table
                 cursor.execute(f"""
@@ -21,7 +22,8 @@ def dump_postgresql_to_sql(output_file):
                 f.write(create_table_query + "\n")
 
                 # INSERT table datas
-                cursor.execute(f"SELECT * FROM {table_name};")
+
+                cursor.execute(f"SELECT * FROM {'\"order\"' if table_name == "order" else table_name};")
                 rows = cursor.fetchall()
                 for row in rows:
                     values = ', '.join([f"'{str(value)}'" if value is not None else 'NULL' for value in row])
@@ -29,7 +31,6 @@ def dump_postgresql_to_sql(output_file):
                     f.write(insert_query + "\n")
         
         print(f"Database dump has been written to {output_file}")
-
     except Exception as error:
         print(f"Error occurred: {error}")
     finally:
@@ -42,5 +43,3 @@ dump_postgresql_to_sql(
     output_file=OUTPUT_FILE
 )
 
-
-print(f"PostgreSQL database has been dumped to {OUTPUT_FILE}")
