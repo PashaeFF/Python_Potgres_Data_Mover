@@ -22,7 +22,6 @@ def dump_postgresql_to_sql(output_file):
                 f.write(create_table_query + "\n")
 
                 # INSERT table datas
-
                 cursor.execute(f"SELECT * FROM {'\"order\"' if table_name == "order" else table_name};")
                 rows = cursor.fetchall()
                 for row in rows:
