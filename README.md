@@ -79,7 +79,7 @@ ___
 
 # Run Upload
 
-If you have placed the <b>POSTGRES UPLOAD</b> information into the <b>.env</b> file, navigate to the <b>upload_sql_file_to_db</b> folder and run the <b>upload.py</b> file. The file specified in the <b>SQL_INPUT</b> variable in the <b>.env</b> will be uploaded into the selected database."
+If you have placed the <b>POSTGRES UPLOAD</b> information into the <b>.env</b> file, navigate to the <b>upload</b> folder and run the <b>upload.py</b> file. The file specified in the <b>SQL_INPUT</b> variable in the <b>.env</b> will be uploaded into the selected database."
 
 ___
 
