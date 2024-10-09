@@ -74,13 +74,14 @@ ___
 # Run Dump
 
 
-If you have placed the <b style="color:#007FFF">POSTGRES DUMP</b> information inside the <b style="color:#007FFF">.env</b> file, navigate to the <b style="color:#007FFF">dump</b> folder and run the <b style="color:#007FFF">dumper.py</b> file. An SQL file will be created with the name you assigned to the <b style="color:#007FFF">SQL_OUTPUT</b> variable in the <b style="color:#007FFF">.env</b> file.
+If you have placed the <span style="color:#007FFF">POSTGRES DUMP</span> information inside the <span style="color:#007FFF">.env</span> file, navigate to the <span style="color:#007FFF">dump</span> folder and run the <span style="color:#007FFF">dumper.py</span> file. An SQL file will be created with the name you assigned to the <span style="color:#007FFF">SQL_OUTPUT</span> variable in the <span style="color:#007FFF">.env</span> file.
+If you want any column to auto-increment like an <span style="color:#007FFF">id</span>, you can add the column name to the <span style="color:#007FFF">autoincrement_list = ["id"]</span> inside <span style="color:#007FFF">dump/config.py</span>. For any table that contains this column, it will be treated as an auto-incrementing ID and saved accordingly.
 
 ___
 
 # Run Upload
 
-If you have placed the <b style="color:#007FFF">POSTGRES UPLOAD</b> information into the <b style="color:#007FFF">.env</b> file, navigate to the <b style="color:#007FFF">upload</b> folder and run the <b style="color:#007FFF">upload.py</b> file. The file specified in the <b style="color:#007FFF">SQL_INPUT</b> variable in the <b style="color:#007FFF">.env</b> will be uploaded into the selected database."
+If you have placed the <span style="color:#007FFF">POSTGRES UPLOAD</span> information into the <span style="color:#007FFF">.env</span> file, navigate to the <span style="color:#007FFF">upload</span> folder and run the <span style="color:#007FFF">upload.py</span> file. The file specified in the <span style="color:#007FFF">SQL_INPUT</span> variable in the <span style="color:#007FFF">.env</span> will be uploaded into the selected database."
 
 ___
 
