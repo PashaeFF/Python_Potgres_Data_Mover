@@ -35,7 +35,7 @@ $ source env/bin/activate
 Install the dependencies listed in the requirements.txt file into the virtual environment.
 
 ```
-$ pip install -r requirments.txt
+$ pip install -r requirements.txt
 ```
 
 Create a .env file in the main directory and add the following content to it:
