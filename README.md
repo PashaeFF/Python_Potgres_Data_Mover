@@ -27,9 +27,9 @@ Create a virtual environment
 Example:           
 
 ``` 
-$ python3 -m venv env #macos/linux
+$ python3 -m venv env     #macos/linux
 
-> py -3 -m venv env   #windows
+> py -3 -m venv env       #windows
 ```
 
 Activate the virtual environment.
