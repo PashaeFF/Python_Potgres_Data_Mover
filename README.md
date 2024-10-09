@@ -43,10 +43,10 @@ Create a .env file in the main directory and add the following content to it:
 <b style="color:#007FFF">SQL_INPUT</b> - The path where the SQL file is selected.
 
 ```
-###############################################################
-###                     POSTGRES DUMP                       ###
-### The database from which you are trying to retrieve data ###
-###############################################################
+###################################################################
+###                       POSTGRES DUMP                         ###
+###   The database from which you are trying to retrieve data   ###
+###################################################################
 
 POSTGRES_DB_DUMP=dump_database
 POSTGRES_USER_DUMP=dump_username
@@ -56,10 +56,10 @@ POSTGRES_PORT_DUMP=dump_port
 
 SQL_OUTPUT=backup_postgresql.sql
 
-######################################################
-###                POSTGRES UPLOAD                 ###
-### The database where you want to upload the data ###
-######################################################
+###################################################################
+###                       POSTGRES UPLOAD                       ###
+###       The database where you want to upload the data        ###
+###################################################################
 
 POSTGRES_DB_UPLOAD=upload_to_database
 POSTGRES_USER_UPLOAD=upload_to_user
