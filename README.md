@@ -13,7 +13,8 @@ ___
 * <b> Dump data from the selected PostgreSQL database </b>
 * <b> SQL file data uploading into selected PostgreSQL database </b>
 
-<b> Note: The dump and upload functions operate independently; it is sufficient to specify the database information for the function you are using. </b>
+<b> <span style="color:red">Note:</span> The dump and upload functions operate independently; it is sufficient to specify the database information for the function you are using. </b><br/>
+<b> <span style="color:red">Note 2:</span> Whichever database you want to load into or pull data from, your device's IP address must have access permission to that database.</b>
 ____
 
 # Installing
@@ -37,8 +38,8 @@ $ pip install -r requirments.txt
 ```
 
 Create a .env file in the main directory and add the following content to it:
-<b>SQL_OUTPUT</b> - The path where the SQL file will be created.
-<b>SQL_INPUT</b> - The path where the SQL file is selected.
+<b style="color:#007FFF">SQL_OUTPUT</b> - The path where the SQL file will be created.
+<b style="color:#007FFF">SQL_INPUT</b> - The path where the SQL file is selected.
 
 ```
 ###############################################################
@@ -67,19 +68,18 @@ POSTGRES_PORT_UPLOAD=5432
 
 SQL_INPUT=backup_postgresql.sql
 ```
-
 ___
 
 # Run Dump
 
 
-If you have placed the <b>POSTGRES DUMP</b> information inside the <b>.env</b> file, navigate to the <b>dump</b> folder and run the <b>dumper.py</b> file. An SQL file will be created with the name you assigned to the <b>SQL_OUTPUT</b> variable in the <b>.env</b> file.
+If you have placed the <b style="color:#007FFF">POSTGRES DUMP</b> information inside the <b style="color:#007FFF">.env</b> file, navigate to the <b style="color:#007FFF">dump</b> folder and run the <b style="color:#007FFF">dumper.py</b> file. An SQL file will be created with the name you assigned to the <b style="color:#007FFF">SQL_OUTPUT</b> variable in the <b style="color:#007FFF">.env</b> file.
 
 ___
 
 # Run Upload
 
-If you have placed the <b>POSTGRES UPLOAD</b> information into the <b>.env</b> file, navigate to the <b>upload</b> folder and run the <b>upload.py</b> file. The file specified in the <b>SQL_INPUT</b> variable in the <b>.env</b> will be uploaded into the selected database."
+If you have placed the <b style="color:#007FFF">POSTGRES UPLOAD</b> information into the <b style="color:#007FFF">.env</b> file, navigate to the <b style="color:#007FFF">upload</b> folder and run the <b style="color:#007FFF">upload.py</b> file. The file specified in the <b style="color:#007FFF">SQL_INPUT</b> variable in the <b style="color:#007FFF">.env</b> will be uploaded into the selected database."
 
 ___
 
