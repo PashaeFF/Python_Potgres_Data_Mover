@@ -61,11 +61,11 @@ SQL_OUTPUT=backup_postgresql.sql
 ### The database where you want to upload the data ###
 ######################################################
 
-POSTGRES_DB_UPLOAD=loaded
-POSTGRES_USER_UPLOAD=postgres
-POSTGRES_PASSWORD_UPLOAD=postgres
-POSTGRES_HOST_UPLOAD=localhost
-POSTGRES_PORT_UPLOAD=5432
+POSTGRES_DB_UPLOAD=upload_to_database
+POSTGRES_USER_UPLOAD=upload_to_user
+POSTGRES_PASSWORD_UPLOAD=upload_to_password
+POSTGRES_HOST_UPLOAD=upload_to_host
+POSTGRES_PORT_UPLOAD=upload_to_port
 
 SQL_INPUT=backup_postgresql.sql
 ```
