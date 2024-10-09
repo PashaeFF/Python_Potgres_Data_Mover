@@ -27,13 +27,17 @@ Create a virtual environment
 Example:           
 
 ``` 
-$ python3 -m venv env
+$ python3 -m venv env #macos/linux
+
+> py -3 -m venv env   #windows
 ```
 
 Activate the virtual environment.
 
 ```
-$ source env/bin/activate
+$ source env/bin/activate #macos/linux
+
+> env\Scripts\activate    #windows
 ```
 Install the dependencies listed in the requirements.txt file into the virtual environment.
 
